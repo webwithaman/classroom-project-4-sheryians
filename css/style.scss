@@ -1,7 +1,24 @@
-/* Google Fonts Import */
+// Google Fonts Import
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Nunito:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap");
 
-/* Reset Default Styles Start */
+// CSS Variables Start
+:root {
+  // Theme Colors
+  --black: #000;
+  --white: #fff;
+
+  // Theme Fonts
+  --font-family-1: "Lato", sans-serif;
+  --font-family-2: "Poppins", sans-serif;
+  --font-family-3: "Oswald", sans-serif;
+  --font-family-4: "Ubuntu", sans-serif;
+  --font-family-5: "Roboto", sans-serif;
+  --font-family-6: "Nunito", sans-serif;
+  --font-family-7: "Gideon", sans-serif;
+}
+// CSS Variables End
+
+// Reset Default Styles Start
 *,
 *::before,
 *::after {
@@ -11,34 +28,18 @@
 }
 
 html {
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%; // 1rem = 10px
   overflow-x: hidden;
   scroll-behavior: smooth;
+  font-family: var(--font-family-2);
 }
 
 body {
   overflow-x: hidden;
 }
-/* Reset Default Styles End */
+// Reset Default Styles End
 
-/* CSS Variables Start */
-:root {
-  /* Theme Colors */
-  --black: #000;
-  --white: #fff;
-
-  /* Theme Fonts */
-  --font-family-1: "Lato", sans-serif;
-  --font-family-2: "Poppins", sans-serif;
-  --font-family-3: "Oswald", sans-serif;
-  --font-family-4: "Ubuntu", sans-serif;
-  --font-family-5: "Roboto", sans-serif;
-  --font-family-6: "Nunito", sans-serif;
-  --font-family-7: "Gideon", sans-serif;
-}
-/* CSS Variables End */
-
-/* Common Styles for Frequently Used Elements Start */
+// Common Styles for Frequently Used Elements Start
 a {
   text-decoration: none;
   display: inline-block;
@@ -66,6 +67,7 @@ textarea {
 
 img {
   max-width: 100%;
+  border-radius: 2rem;
   display: inline-block;
   object-fit: cover;
 }
@@ -76,29 +78,171 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-1);
-  line-height: 1.4;
+  font-family: var(--font-family-4);
 }
 
 p {
   font-family: var(--font-family-2);
-  line-height: 1.6;
 }
-/* Common Styles for Frequently Used Elements End */
+// Common Styles for Frequently Used Elements End
 
-/* Reusable Components for This Site Start */
-/* Add your component-specific styles here */
-/* Reusable Components for This Site End */
-
-/* Page-Specific Styles Start */
-.site-wrapper {
-  width: 100vw;
-  height: 2000px;
+// Reusable Components for This Site Start
+.common-padding-inline {
+  padding-inline: 2rem;
 }
-/* Page-Specific Styles End */
 
-/* Keyframes for Animations Start */
+.common-padding-block {
+  padding-block: 5rem;
+}
+
+.primary-btn {
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--font-family-2);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  font-size: 1.4rem;
+  padding: 0.6em 1em;
+  border-radius: 3rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+}
+
+.primary-btn:hover {
+  background: #000000da;
+}
+// Reusable Components for This Site End
+
+// Page-Specific Styles Start
+
+// Navbar Start
+.navbar {
+  padding-block: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  .logo {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+
+  #checkbox-for-toggle {
+    display: none;
+  }
+
+  #checkbox-for-toggle:checked + .nav-links {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: #000;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    li {
+      padding: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.594);
+      padding-block: 1em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .button-toggle-box {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+
+    .toggle-bar {
+      font-size: 3.5rem;
+      font-weight: 900;
+    }
+  }
+}
+// Navbar End
+// Navbar End
+
+// Hero Section Start
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  .hero-left {
+    .hero-left-text {
+      h1 {
+        font-size: 5rem;
+
+        span {
+          color: rgb(181, 181, 181);
+        }
+      }
+
+      p {
+        font-size: 1.5rem;
+        margin-block: 1rem 2rem;
+      }
+    }
+  }
+
+  .hero-right {
+    .hero-right-grid {
+      gap: 2rem;
+      display: grid;
+      grid-template-areas:
+        "a b"
+        "a b"
+        "a b"
+        "a c"
+        "a c"
+        "a c";
+
+      .img-box {
+        border-radius: 2rem;
+        background-size: cover;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+          rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      }
+
+      .img-box:nth-child(1) {
+        background-image: url(https://img.freepik.com/free-photo/stunning-natural-landscape_23-2151893613.jpg?t=st=1739531942~exp=1739535542~hmac=e9097604952687eeae21f63086a79d6e9e6eb06c93a0e30430841f347c14b50d&w=740);
+        grid-area: a;
+      }
+      .img-box:nth-child(2) {
+        background-image: url(https://img.freepik.com/free-photo/beautiful-natural-landscape_23-2151839189.jpg?t=st=1739532447~exp=1739536047~hmac=8992f39018c4bc97d43a79ac4a3f1afc103f7750db5ea5095bb3f32cf2ec0431&w=740);
+        height: 17rem;
+        grid-area: b;
+      }
+      .img-box:nth-child(3) {
+        background-image: url(https://img.freepik.com/free-photo/stunning-natural-landscape_23-2151893581.jpg?t=st=1739532372~exp=1739535972~hmac=b6d1fdce07150d95e7e08406dc7477552b4b9cc6d8f4e1b815a033e45f4e675f&w=1060);
+        grid-area: c;
+        height: 10rem;
+      }
+    }
+  }
+}
+// Hero Section End
+
+// Page-Specific Styles End
+
+// Keyframes for Animations Start
 @keyframes animation-name {
-  /* Define your keyframes here */
+  // Define your keyframes here
 }
-/* Keyframes for Animations End */
+// Keyframes for Animations End

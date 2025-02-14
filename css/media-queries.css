@@ -1,0 +1,118 @@
+/* General Styles for screen size <= 300px */
+@media screen and (max-width: 300px) {
+  html {
+    font-size: 48%;
+  }
+}
+/* General Styles for screen size <= 230px */
+@media screen and (max-width: 300px) {
+  html {
+    font-size: 38%;
+  }
+}
+/* General Styles for screen size <= 180px */
+@media screen and (max-width: 300px) {
+  * {
+    word-wrap: break-word;
+  }
+  html {
+    font-size: 25%;
+  }
+}
+/* General Styles for screen size >= 500px */
+@media screen and (min-width: 500px) {
+  .hero .hero-right .hero-right-grid .img-box:nth-child(2) {
+    height: 30rem;
+  }
+  .hero .hero-right .hero-right-grid .img-box:nth-child(3) {
+    height: 21rem;
+  }
+}
+/* General Styles for screen size >= 768px */
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 11px;
+  }
+  .common-padding-inline {
+    padding-inline: 3rem;
+  }
+  .hero .hero-right .hero-right-grid {
+    gap: 2.5rem;
+  }
+}
+/* General Styles for screen size >= 768px */
+@media screen and (min-width: 1200px) {
+  .common-padding-inline {
+    padding-inline: 6rem;
+  }
+  .navbar .nav-links {
+    display: revert;
+    position: initial;
+    background-color: initial;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    border: none;
+    padding: 0;
+  }
+  .navbar .nav-links li {
+    padding: 0;
+    border: none;
+    position: relative;
+  }
+  .navbar .nav-links li:first-child a {
+    color: #000;
+  }
+  .navbar .nav-links li a {
+    color: rgb(88, 88, 88);
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .navbar .nav-links li a:hover {
+    color: #000;
+  }
+  .navbar .button-toggle-box .toggle-bar {
+    display: none;
+  }
+  .hero {
+    flex-direction: row;
+    gap: 0;
+  }
+  .hero .hero-left {
+    flex: 1;
+  }
+  .hero .hero-left .hero-left-text {
+    width: 85%;
+  }
+  .hero .hero-left .hero-left-text h1 {
+    font-size: 7rem;
+  }
+  .hero .hero-right {
+    flex: 1;
+  }
+  .hero .hero-right .hero-right-grid {
+    margin-left: auto;
+    width: 90%;
+    gap: 3.5rem;
+    grid-template-areas: ". b" "a b" "a b" "a b" "a c" ". c";
+  }
+  .hero .hero-right .hero-right-grid .img-box:nth-child(2) {
+    height: 35rem;
+  }
+  .hero .hero-right .hero-right-grid .img-box:nth-child(3) {
+    height: 20rem;
+  }
+}
+/* General Styles for screen size >= 1800px */
+@media screen and (min-width: 1800px) {
+  html {
+    font-size: 68%;
+  }
+}
+/* General Styles for screen size >= 2200px */
+@media screen and (min-width: 2200px) {
+  html {
+    font-size: 78%;
+  }
+}
