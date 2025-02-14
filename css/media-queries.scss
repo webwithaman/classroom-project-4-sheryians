@@ -68,6 +68,10 @@
     padding-inline: 6rem;
   }
 
+  .common-padding-block {
+    padding-block: 5rem;
+  }
+
   // Navbar Start
   .navbar {
     .nav-links {
@@ -88,11 +92,11 @@
         position: relative;
 
         &:first-child a {
-          color: #000;
+          color: var(--black);
         }
 
         a {
-          color: rgb(88, 88, 88);
+          color: var(--secondary-color);
           transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 
           &:hover {
@@ -149,6 +153,62 @@
     }
   }
   // Hero Section End
+
+  // latest Stories Section Start
+  .latest-stories {
+    .latest-stories-container {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+
+      .latest-stories-left {
+        flex: 1.5;
+        h3 {
+          font-size: 2.4rem;
+          margin-top: 0.5em;
+        }
+
+        p {
+          font-size: 1.6rem;
+          margin-block: 0.7em 0.9em;
+        }
+      }
+
+      .latest-stories-right {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .latest-stories-right-box {
+          display: flex;
+          align-items: flex-start;
+          gap: 2rem;
+
+          img {
+            width: 40%;
+            aspect-ratio: 1;
+          }
+
+          div {
+            h4 {
+              font-size: 2.4rem;
+            }
+            p {
+              font-size: 1.6rem;
+              margin-block: 0.3em 0.5em;
+            }
+            span {
+              color: var(--secondary-color);
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  // latest Stories Section End
 }
 
 /* General Styles for screen size >= 1800px */

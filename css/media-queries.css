@@ -45,6 +45,9 @@
   .common-padding-inline {
     padding-inline: 6rem;
   }
+  .common-padding-block {
+    padding-block: 5rem;
+  }
   .navbar .nav-links {
     display: revert;
     position: initial;
@@ -63,10 +66,10 @@
     position: relative;
   }
   .navbar .nav-links li:first-child a {
-    color: #000;
+    color: var(--black);
   }
   .navbar .nav-links li a {
-    color: rgb(88, 88, 88);
+    color: var(--secondary-color);
     transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   }
   .navbar .nav-links li a:hover {
@@ -102,6 +105,48 @@
   }
   .hero .hero-right .hero-right-grid .img-box:nth-child(3) {
     height: 20rem;
+  }
+  .latest-stories .latest-stories-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .latest-stories .latest-stories-container .latest-stories-left {
+    flex: 1.5;
+  }
+  .latest-stories .latest-stories-container .latest-stories-left h3 {
+    font-size: 2.4rem;
+    margin-top: 0.5em;
+  }
+  .latest-stories .latest-stories-container .latest-stories-left p {
+    font-size: 1.6rem;
+    margin-block: 0.7em 0.9em;
+  }
+  .latest-stories .latest-stories-container .latest-stories-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .latest-stories .latest-stories-container .latest-stories-right .latest-stories-right-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .latest-stories .latest-stories-container .latest-stories-right .latest-stories-right-box img {
+    width: 40%;
+    aspect-ratio: 1;
+  }
+  .latest-stories .latest-stories-container .latest-stories-right .latest-stories-right-box div h4 {
+    font-size: 2.4rem;
+  }
+  .latest-stories .latest-stories-container .latest-stories-right .latest-stories-right-box div p {
+    font-size: 1.6rem;
+    margin-block: 0.3em 0.5em;
+  }
+  .latest-stories .latest-stories-container .latest-stories-right .latest-stories-right-box div span {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
   }
 }
 /* General Styles for screen size >= 1800px */
