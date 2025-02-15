@@ -68,9 +68,11 @@ textarea {
 
 img {
   max-width: 100%;
+  width: 100%;
   border-radius: 2rem;
   display: inline-block;
   object-fit: cover;
+  filter: drop-shadow(rgba(0, 0, 0, 0.591) 2px 2px 3px);
 }
 
 h1,
@@ -79,7 +81,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-4);
+  font-family: var(--font-family-2);
 }
 
 p {
@@ -97,7 +99,7 @@ p {
 }
 
 .primary-btn {
-  border: none;
+  border: 2px solid var(--black);
   background: var(--black);
   color: var(--white);
   cursor: pointer;
@@ -304,8 +306,8 @@ p {
     }
 
     h3 {
-      font-size: 2.4rem;
-      color: var(--secondary-color);
+      font-size: 2.2rem;
+      color: var(--black);
       padding: 0.5rem;
       font-weight: 500;
     }
@@ -324,6 +326,7 @@ p {
       h3 {
         font-size: 2.4rem;
         margin-top: 0.5em;
+        font-weight: 500;
       }
 
       p {
@@ -350,6 +353,7 @@ p {
         div {
           h4 {
             font-size: 2.4rem;
+            font-weight: 500;
           }
           p {
             font-size: 1.6rem;
@@ -365,6 +369,60 @@ p {
   }
 }
 // latest Stories Section End
+
+// Highlights Section Start
+.highlights {
+  .highlights-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .highlights-left {
+      .highlights-left-profile {
+        display: flex;
+        gap: 2rem;
+        img {
+          width: 6rem;
+          height: 6rem;
+          border-radius: 50%;
+        }
+
+        div {
+          h4 {
+            font-size: 2.4rem;
+            font-weight: 500;
+          }
+          span {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+          }
+        }
+      }
+      h3 {
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin-block: 0.5em 0.2em;
+      }
+      p {
+        font-size: 1.6rem;
+        margin-block: 0.3em 0.5em;
+      }
+    }
+  }
+  .highlights-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    div {
+      p {
+        font-size: 1.6rem;
+        margin-block: 0.3em 0.5em;
+      }
+    }
+  }
+}
+// Highlights Section End
 
 // Footer Start
 footer {

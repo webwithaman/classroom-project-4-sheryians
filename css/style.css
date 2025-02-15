@@ -58,10 +58,12 @@ textarea {
 
 img {
   max-width: 100%;
+  width: 100%;
   border-radius: 2rem;
   display: inline-block;
   -o-object-fit: cover;
      object-fit: cover;
+  filter: drop-shadow(rgba(0, 0, 0, 0.591) 2px 2px 3px);
 }
 
 h1,
@@ -70,7 +72,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-4);
+  font-family: var(--font-family-2);
 }
 
 p {
@@ -86,7 +88,7 @@ p {
 }
 
 .primary-btn {
-  border: none;
+  border: 2px solid var(--black);
   background: var(--black);
   color: var(--white);
   cursor: pointer;
@@ -253,8 +255,8 @@ p {
   filter: drop-shadow(rgba(0, 0, 0, 0.591) 2px 2px 3px);
 }
 .destinations-boxes .destination-box h3 {
-  font-size: 2.4rem;
-  color: var(--secondary-color);
+  font-size: 2.2rem;
+  color: var(--black);
   padding: 0.5rem;
   font-weight: 500;
 }
@@ -267,6 +269,7 @@ p {
 .latest-stories .latest-stories-container .latest-stories-left h3 {
   font-size: 2.4rem;
   margin-top: 0.5em;
+  font-weight: 500;
 }
 .latest-stories .latest-stories-container .latest-stories-left p {
   font-size: 1.6rem;
@@ -288,6 +291,7 @@ p {
 }
 .latest-stories .latest-stories-container .latest-stories-right .latest-stories-right-box div h4 {
   font-size: 2.4rem;
+  font-weight: 500;
 }
 .latest-stories .latest-stories-container .latest-stories-right .latest-stories-right-box div p {
   font-size: 1.6rem;
@@ -296,6 +300,47 @@ p {
 .latest-stories .latest-stories-container .latest-stories-right .latest-stories-right-box div span {
   color: var(--secondary-color);
   font-size: 1.4rem;
+}
+
+.highlights .highlights-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.highlights .highlights-container .highlights-left .highlights-left-profile {
+  display: flex;
+  gap: 2rem;
+}
+.highlights .highlights-container .highlights-left .highlights-left-profile img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+}
+.highlights .highlights-container .highlights-left .highlights-left-profile div h4 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.highlights .highlights-container .highlights-left .highlights-left-profile div span {
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+}
+.highlights .highlights-container .highlights-left h3 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-block: 0.5em 0.2em;
+}
+.highlights .highlights-container .highlights-left p {
+  font-size: 1.6rem;
+  margin-block: 0.3em 0.5em;
+}
+.highlights .highlights-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.highlights .highlights-right div p {
+  font-size: 1.6rem;
+  margin-block: 0.3em 0.5em;
 }
 
 footer {

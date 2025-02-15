@@ -40,8 +40,8 @@
     gap: 2.5rem;
   }
 }
-/* General Styles for screen size >= 768px */
-@media screen and (min-width: 1200px) {
+/* General Styles for screen size >= 1200px */
+@media screen and (min-width: 1080px) {
   .common-padding-inline {
     padding-inline: 6rem;
   }
@@ -147,6 +147,52 @@
   .latest-stories .latest-stories-container .latest-stories-right .latest-stories-right-box div span {
     color: var(--secondary-color);
     font-size: 1.4rem;
+  }
+  .highlights .highlights-container {
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .highlights .highlights-container .highlights-left {
+    flex: 1;
+  }
+  .highlights .highlights-container .highlights-left .highlights-left-profile {
+    display: flex;
+    gap: 2rem;
+  }
+  .highlights .highlights-container .highlights-left .highlights-left-profile img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+  }
+  .highlights .highlights-container .highlights-left .highlights-left-profile div h4 {
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+  .highlights .highlights-container .highlights-left .highlights-left-profile div span {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+  }
+  .highlights .highlights-container .highlights-left h3 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-block: 0.5em 0.2em;
+  }
+  .highlights .highlights-container .highlights-left p {
+    font-size: 1.6rem;
+    margin-block: 0.3em 0.5em;
+  }
+  .highlights .highlights-right {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .highlights .highlights-right div {
+    flex: 1;
+  }
+  .highlights .highlights-right div p {
+    font-size: 1.6rem;
+    margin-block: 0.3em 0.5em;
   }
 }
 /* General Styles for screen size >= 1800px */

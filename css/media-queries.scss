@@ -62,8 +62,8 @@
   // Hero Section End
 }
 
-/* General Styles for screen size >= 768px */
-@media screen and (min-width: 1200px) {
+/* General Styles for screen size >= 1200px */
+@media screen and (min-width: 1080px) {
   .common-padding-inline {
     padding-inline: 6rem;
   }
@@ -209,6 +209,64 @@
     }
   }
   // latest Stories Section End
+
+  // Highlights Section Start
+  .highlights {
+    .highlights-container {
+      flex-direction: row;
+      gap: 3rem;
+
+      .highlights-left {
+        flex: 1;
+
+        .highlights-left-profile {
+          display: flex;
+          gap: 2rem;
+          img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+          }
+
+          div {
+            h4 {
+              font-size: 2.4rem;
+              font-weight: 500;
+            }
+            span {
+              color: var(--secondary-color);
+              font-size: 1.4rem;
+            }
+          }
+        }
+        h3 {
+          font-size: 2.4rem;
+          font-weight: 500;
+          margin-block: 0.5em 0.2em;
+        }
+        p {
+          font-size: 1.6rem;
+          margin-block: 0.3em 0.5em;
+        }
+      }
+    }
+    .highlights-right {
+      flex: 1;
+
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+
+      div {
+        flex: 1;
+        p {
+          font-size: 1.6rem;
+          margin-block: 0.3em 0.5em;
+        }
+      }
+    }
+  }
+  // Highlights Section End
 }
 
 /* General Styles for screen size >= 1800px */
