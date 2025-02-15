@@ -1,24 +1,6 @@
 // Google Fonts Import
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Nunito:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap");
 
-// CSS Variables Start
-:root {
-  // Theme Colors
-  --black: #000;
-  --white: #fff;
-  --secondary-color: rgb(181, 181, 181);
-
-  // Theme Fonts
-  --font-family-1: "Lato", sans-serif;
-  --font-family-2: "Poppins", sans-serif;
-  --font-family-3: "Oswald", sans-serif;
-  --font-family-4: "Ubuntu", sans-serif;
-  --font-family-5: "Roboto", sans-serif;
-  --font-family-6: "Nunito", sans-serif;
-  --font-family-7: "Gideon", sans-serif;
-}
-// CSS Variables End
-
 // Reset Default Styles Start
 *,
 *::before,
@@ -32,11 +14,12 @@ html {
   font-size: 62.5%; // 1rem = 10px
   overflow-x: hidden;
   scroll-behavior: smooth;
-  font-family: var(--font-family-2);
 }
 
 body {
   overflow-x: hidden;
+  font-family: $primary-font-family;
+  color: $black;
 }
 // Reset Default Styles End
 
@@ -44,33 +27,17 @@ body {
 a {
   text-decoration: none;
   display: inline-block;
-  font-family: var(--font-family-2);
-  transition: all 0.3s linear;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-li {
+ul {
   list-style: none;
-  font-family: var(--font-family-2);
-}
-
-button {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-family: var(--font-family-2);
-  transition: all 0.3s linear;
-}
-
-input,
-textarea {
-  outline: none;
 }
 
 img {
   max-width: 100%;
   width: 100%;
   border-radius: 2rem;
-  display: inline-block;
   object-fit: cover;
   filter: drop-shadow(rgba(0, 0, 0, 0.591) 2px 2px 3px);
 }
@@ -81,15 +48,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-2);
-}
-
-p {
-  font-family: var(--font-family-2);
+  text-transform: capitalize;
 }
 // Common Styles for Frequently Used Elements End
 
-// Reusable Components for This Site Start
+// Reusable Components & Utility Classes Start
 .common-padding-inline {
   padding-inline: 2rem;
 }
@@ -99,11 +62,10 @@ p {
 }
 
 .primary-btn {
-  border: 2px solid var(--black);
-  background: var(--black);
-  color: var(--white);
+  border: 2px solid $black;
+  background: $black;
+  color: $white;
   cursor: pointer;
-  font-family: var(--font-family-2);
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   font-size: 1.5rem;
   padding: 0.7em 1.1em;
@@ -111,54 +73,33 @@ p {
   font-weight: 500;
   letter-spacing: 0.4px;
   text-transform: capitalize;
+  font-family: $primary-font-family;
 }
 
 .primary-btn:hover {
-  background: var(--white);
-  color: var(--black);
-}
-
-.secondary-btn {
-  border: 2px solid var(--black);
-  background: var(--white);
-  color: var(--black);
-  cursor: pointer;
-  font-family: var(--font-family-2);
-  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-  font-size: 1.4rem;
-  padding: 0.6em 1em;
-  border-radius: 3rem;
-  font-weight: 500;
-  letter-spacing: 0.4px;
-  text-transform: capitalize;
-}
-
-.secondary-btn:hover {
-  background: var(--black);
-  color: var(--white);
+  background: $white;
+  color: $black;
 }
 
 .section-primary-heading {
-  color: var(--black);
   font-size: 3.2rem;
-  text-transform: capitalize;
   margin-bottom: 0.8em;
+  font-weight: 600;
 }
-// Reusable Components for This Site End
+// Reusable Components & Utility Classes Start
 
 // Page-Specific Styles Start
 
 // Navbar Start
 .navbar {
-  padding-block: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  padding-block: 2rem;
 
   .logo {
     font-size: 2.5rem;
-    text-transform: uppercase;
   }
 
   #checkbox-for-toggle {
@@ -171,26 +112,29 @@ p {
 
   .nav-links {
     display: none;
+    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    flex-direction: column;
-    font-size: 1.5rem;
     font-weight: 500;
-    background-color: var(--black);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    background-color: $black;
+    letter-spacing: 0.4px;
 
     li {
-      padding: 2rem;
+      font-size: 1.4rem;
+      padding: 1.3em 2.1em;
       border-bottom: 1px solid rgba(255, 255, 255, 0.594);
       padding-block: 1em;
       text-transform: uppercase;
       letter-spacing: 0.5px;
 
+      &:last-child {
+        border-bottom: none;
+      }
+
       a {
-        color: var(--white);
+        color: $white;
       }
     }
   }
@@ -207,7 +151,6 @@ p {
   }
 }
 // Navbar End
-// Navbar End
 
 // Hero Section Start
 .hero {
@@ -221,21 +164,21 @@ p {
         font-size: 5rem;
 
         span {
-          color: var(--secondary-color);
+          color: $secondary-color;
         }
       }
 
       p {
-        font-size: 1.6rem;
-        margin-block: 1rem 2rem;
+        font-size: 1.5rem;
+        margin-block: 0.6em 1.2em;
       }
     }
   }
 
   .hero-right {
     .hero-right-grid {
-      gap: 2rem;
       display: grid;
+      gap: 2rem;
       grid-template-areas:
         "a b"
         "a b"
@@ -255,11 +198,13 @@ p {
         background-image: url(https://img.freepik.com/free-photo/stunning-natural-landscape_23-2151893613.jpg?t=st=1739531942~exp=1739535542~hmac=e9097604952687eeae21f63086a79d6e9e6eb06c93a0e30430841f347c14b50d&w=740);
         grid-area: a;
       }
+
       .img-box:nth-child(2) {
-        background-image: url(https://img.freepik.com/free-photo/beautiful-natural-landscape_23-2151839189.jpg?t=st=1739532447~exp=1739536047~hmac=8992f39018c4bc97d43a79ac4a3f1afc103f7750db5ea5095bb3f32cf2ec0431&w=740);
-        height: 17rem;
+        background-image: url(https://images.unsplash.com/photo-1524338198850-8a2ff63aaceb?q=80&w=2030&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
         grid-area: b;
+        height: 17rem;
       }
+
       .img-box:nth-child(3) {
         background-image: url(https://img.freepik.com/free-photo/stunning-natural-landscape_23-2151893581.jpg?t=st=1739532372~exp=1739535972~hmac=b6d1fdce07150d95e7e08406dc7477552b4b9cc6d8f4e1b815a033e45f4e675f&w=1060);
         grid-area: c;
@@ -274,18 +219,17 @@ p {
 .destinations-boxes {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px inset;
   display: flex;
-  align-items: center;
   padding: 3rem;
   gap: 3rem;
   overflow-x: auto;
   border-radius: 2rem 2rem 0 0;
 
   &::-webkit-scrollbar {
-    height: 1.2rem;
+    height: 1.1rem;
   }
 
   &::-webkit-scrollbar-track {
-    background-color: var(--white);
+    background-color: $white;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.203) inset;
   }
 
@@ -299,16 +243,15 @@ p {
     border-radius: 2rem 2rem 0 0;
 
     img {
-      width: 100%;
       border-radius: 2rem;
       aspect-ratio: 1/1.4;
       filter: drop-shadow(rgba(0, 0, 0, 0.591) 2px 2px 3px);
     }
 
     h3 {
-      font-size: 2.2rem;
-      color: var(--black);
-      padding: 0.5rem;
+      font-size: 2rem;
+      color: $black;
+      padding: 0.3em 0 0 0.3em;
       font-weight: 500;
     }
   }
@@ -316,53 +259,54 @@ p {
 // Top Destinations Section End
 
 // latest Stories Section Start
-.latest-stories {
-  .latest-stories-container {
+.latest-stories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  h3 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-top: 0.5em;
+  }
+
+  p {
+    font-size: 1.6rem;
+    margin-block: 0.7em 0.9em;
+  }
+
+  .latest-stories-right {
     display: flex;
     flex-direction: column;
     gap: 3rem;
 
-    .latest-stories-left {
-      h3 {
-        font-size: 2.4rem;
-        margin-top: 0.5em;
-        font-weight: 500;
-      }
-
-      p {
-        font-size: 1.6rem;
-        margin-block: 0.7em 0.9em;
-      }
-    }
-
-    .latest-stories-right {
+    .latest-stories-right-box {
       display: flex;
-      flex-direction: column;
+      align-items: flex-start;
       gap: 2rem;
 
-      .latest-stories-right-box {
-        display: flex;
-        align-items: flex-start;
-        gap: 2rem;
+      div:first-child {
+        flex: 0.8;
 
         img {
-          width: 40%;
           aspect-ratio: 1;
         }
+      }
 
-        div {
-          h4 {
-            font-size: 2.4rem;
-            font-weight: 500;
-          }
-          p {
-            font-size: 1.6rem;
-            margin-block: 0.3em 0.5em;
-          }
-          span {
-            color: var(--secondary-color);
-            font-size: 1.4rem;
-          }
+      div:last-child {
+        flex: 1.2;
+
+        span {
+          color: $secondary-color;
+          font-size: 1.5rem;
+        }
+
+        h3 {
+          margin-block: 0.2em;
+        }
+
+        p {
+          margin: 0;
         }
       }
     }
@@ -371,48 +315,47 @@ p {
 // latest Stories Section End
 
 // Highlights Section Start
-.highlights {
-  .highlights-container {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+.highlights-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 
-    .highlights-left {
-      .highlights-left-profile {
-        display: flex;
-        gap: 2rem;
-        img {
-          width: 6rem;
-          height: 6rem;
-          border-radius: 50%;
-        }
+  .highlights-left {
+    .highlights-left-profile {
+      display: flex;
+      gap: 2rem;
 
-        div {
-          h4 {
-            font-size: 2.4rem;
-            font-weight: 500;
-          }
-          span {
-            color: var(--secondary-color);
-            font-size: 1.4rem;
-          }
+      img {
+        width: 6rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+      }
+
+      div {
+        h4 {
+          font-size: 2.2rem;
+          font-weight: 500;
         }
-      }
-      h3 {
-        font-size: 2.4rem;
-        font-weight: 500;
-        margin-block: 0.5em 0.2em;
-      }
-      p {
-        font-size: 1.6rem;
-        margin-block: 0.3em 0.5em;
+        span {
+          color: $secondary-color;
+          font-size: 1.5rem;
+        }
       }
     }
+    h3 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      margin-block: 0.5em 0.2em;
+    }
+    p {
+      font-size: 1.6rem;
+    }
   }
+
   .highlights-right {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 
     div {
       p {
@@ -426,18 +369,11 @@ p {
 
 // Footer Start
 footer {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: $black;
+  color: $white;
   font-size: 1.4rem;
-  text-transform: capitalize;
   padding-block: 1rem;
 }
 // Footer End
 
 // Page-Specific Styles End
-
-// Keyframes for Animations Start
-@keyframes animation-name {
-  // Define your keyframes here
-}
-// Keyframes for Animations End
